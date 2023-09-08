@@ -1,0 +1,90 @@
+@import '../abstracts/mixins';
+
+.form__container {
+    background-color: getColor('black');
+    height: 100vh;
+    width: 100vw;
+
+    @include short-flex(center, center);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 1.8rem;
+    width: 50%;
+
+    &__col {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__row {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        // gap: .5rem;
+        align-items: center;
+    }
+    &__label {
+        align-self: flex-start;
+        color: getColor('primary');
+        font-weight: 600;
+    }
+
+    &__input {
+        border-radius: 0.5rem;
+        padding: 1rem 0.75rem;
+        width: 100%;
+        border: none;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        background-color: getColor('secondary');
+        outline: 2px solid getColor('lightdark');
+        margin-top: .3em;
+        &:focus {
+            outline: 2px solid getColor('primary');
+        }
+    }
+
+    &__link {
+        text-decoration: none;
+        color: getColor('primary'); 
+    }
+
+    &__text {
+        text-decoration: none;
+        color: getColor('lightdark');
+    }
+
+    &__submit {
+        padding: 1rem 0.75rem;
+        width: 50%;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        border-radius: 3rem;
+        background-color: getColor('lightdark');
+        color: getColor('light');
+        border: none;
+        cursor: pointer;
+        transition: all 300ms;
+        font-weight: 600;
+        font-size: .9rem;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:hover {
+            background-color: getColor('primary');
+            // color: var(--bg-dark);
+        }
+    }
+}

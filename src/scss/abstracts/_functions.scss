@@ -1,0 +1,7 @@
+@function getColor($color) {
+    @if not map-has-key($palette, $color) {
+        @warn "Warning: `#{$name}` is not a valid color name.";
+    } @else {
+        @return map-get($palette, $color);
+    }
+}

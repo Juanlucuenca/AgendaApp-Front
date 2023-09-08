@@ -1,0 +1,44 @@
+// ********* flex *************
+@mixin short-flex($just , $align ){
+    display         : flex;
+    justify-content : $just;
+    align-items     : $align;
+}
+
+@mixin flexible($direction , $corte , $just , $align, $gap: 0 ){
+    display         : flex;
+    flex-flow       : $direction $corte;
+    justify-content : $just;
+    align-items     : $align;
+    gap: $gap;
+}
+// ********* flex *************
+
+
+// ********* grid *************
+@mixin grid($colMinSize, $rowsMinSize, $gapx, $gapy, $columns: 0 , $rows: 0){
+    display                 : grid;
+    @if $rows == 0 {
+      grid-template-columns   : repeat( $columns , minmax($colMinSize, 1fr) );
+    } @else if $columns == 0 {
+      grid-template-rows      : repeat( $rows , minmax($rowsMinSize, 1fr) );
+    } @else {
+      grid-template-columns   : repeat( $columns , minmax($colMinSize, 1fr) );
+      grid-template-rows      : repeat( $rows , minmax($rowsMinSize, 1fr) );
+    }
+    grid-gap                : $gapx $gapy;
+}
+// ********* grid *************
+
+
+// ********* Responsive *************
+@mixin breakpoint($name) {
+  @if not map-has-key($breakpoints, $name) {
+    @warn "Warning: `#{$name}` is not a valid breakpoint name.";
+  } @else {
+    @media (min-width: map-get($breakpoints, $name)) {
+      @content;
+    }
+  }
+}
+// ********* Responsive *************

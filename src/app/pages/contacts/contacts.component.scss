@@ -1,0 +1,51 @@
+@import '../../../scss/abstracts/functions';
+@import '../../../scss/abstracts/vars';
+
+.contacts__container {
+    background-color: getColor('black');
+    width: 100vw;
+    min-height: 100vh;
+    padding: 3em 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.contact {
+    margin: 2rem 0 0 0;
+    width: 80%;
+    height: 5rem;
+    background-color: getColor('secondary');
+    border: 1px solid getColor('lightdark');
+    border-top: 2px solid getColor('primary');
+    border-radius: 0 0 1em 1em;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    transition: all ease .3s;
+
+    &__img {
+        width: 3.5rem;
+        height: 3.5rem;
+        border-radius: 50%;
+        background-color: getColor('light');
+        border: 1px solid getColor('lightdark');
+        filter: grayscale(15%);
+    }
+
+    &__title {
+        font-size: 3rem;
+        font-weight: 700;
+        color: getColor('light');
+    }
+
+    &:hover {
+        background-color: darken(getColor('lightdark'), 14%); 
+        border-top: 5px solid getColor('primary');
+    }
+}
+
