@@ -1,11 +1,11 @@
-@import '../../../scss/abstracts/functions';
-@import '../../../scss/abstracts/vars';
+@import "../../../scss/abstracts/functions";
+@import "../../../scss/abstracts/vars";
 
 .contacts__container {
-    background-color: getColor('black');
-    width: 100vw;
-    min-height: 100vh;
-    padding: 3em 0;
+  background-color: getColor("black");
+  width: 100vw;
+  min-height: 100vh;
+  padding: 3em 0;
 
     display: flex;
     align-items: center;
