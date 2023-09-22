@@ -1,0 +1,18 @@
+<div (click)="onNavegated(contact.id)" class="contact">
+     <div class="contact__col">
+        <img *ngIf="contact.imgUrl" [src]="contact.imgUrl" alt="Imagen del contacto" class="contact__img">
+        <div *ngIf="!contact.imgUrl">{{contact.name[0] + contact.surname[0]}}</div>
+    </div>  
+    <div class="contact__col">
+        <span class="contact__info">{{contact.name}}</span>
+    </div>
+    <div class="contact__col">
+        <span class="contact__info">{{contact.address}}</span>
+    </div>
+    <div class="contact__col">
+        <span class="contact__info">{{contact.phoneNumber}}</span>
+    </div>
+    <div class="contact__col">
+        <span class="contact__info">{{contact.company}}</span>
+    </div>
+</div>

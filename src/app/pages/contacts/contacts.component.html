@@ -1,21 +1,6 @@
 <div class="contacts__container">
     <h3 class = "contact__title">Lista de contactos</h3>
-    <div class="contact">
-        <div class="contact__col">
-            <img src="https://toproofing.ie/wp-content/uploads/2022/02/100x100.jpg" alt="Imagen del contacto" class="contact__img">
-            <!-- <span class = "contact__info">JLC</span> -->
-        </div>
-        <div class="contact__col">
-            <span class="contact__info">Juan Lucas cuenca</span>
-        </div>
-        <div class="contact__col">
-            <span class="contact__info">Santa Cruz 1608</span>
-        </div>
-        <div class="contact__col">
-            <span class="contact__info">5493413142380</span>
-        </div>
-        <div class="contact__col">
-            <span class="contact__info">PuntoJson</span>
-        </div>
-    </div>
+    <ng-container *ngFor="let contact of contacts">
+        <contact-info [contact]="contact"></contact-info>
+    </ng-container>
 </div>
