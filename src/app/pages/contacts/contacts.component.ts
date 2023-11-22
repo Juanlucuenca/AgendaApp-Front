@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Contact } from 'src/app/data/interfaces/contact';
+import { Contact } from 'src/app/data/interfaces/Contact';
 import { ContactsService } from 'src/app/services/contacts.service';
 
 @Component({
@@ -16,9 +16,11 @@ export class ContactsComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
-    this.contacts = this.contactService.getAll();
+    this.contactService.getAll().then(resp => {
+      this.contacts = resp;
+    });
   }
-    
+
   contacts: Contact[] = [];
 
 }

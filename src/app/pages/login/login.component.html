@@ -12,20 +12,25 @@
 </div> -->
 
 <div class="form__container">
-    <form class="form">
+    <form class="form" (ngSubmit)="login()">
         <div class="form__row">
-            <label class="form__label">Email</label>
-            <input class="form__input" type="email" name="email" id="email">
+            <label class="form__label">Nombre de usuario</label>
+            <input class="form__input" type="text" name="user" id="user" [(ngModel)]="loginData.userName" #user="ngModel"
+            placeholder="Usuario" autocomplete="username"
+            required>
+            <p *ngIf="user.invalid && (user.dirty || user.touched)" class="error">Este campo es requerido</p>
         </div>
         <div class="form__row">
             <label class="form__label">Password</label>
-            <input class="form__input" type="password" name="password" id="password">
+            <input class="form__input" type="password" name="password" id="password" autocomplete="current-password" required minlength="8" [(ngModel)]="loginData.password"  #password="ngModel">
+            <p class="error" *ngIf="password.invalid && (password.dirty || password.touched)">La contraseña tiene que tener un mínimo de 8 caracteres</p>
         </div>
         <div class="form__row">
             <input class="form__submit" type="submit" value="login">
+            <p *ngIf="errorLogin()" class="error">Error al iniciar sesión</p>
         </div>
         <div class="form__row">
-            <p class = "form__text">Don't have an account?<a routerLink="/register" class = "form__link"> Sign up</a></p>
+            <p class = "form__text">Don't have an account?<a [routerLink]="['/register']" class = "form__link"> Sign up</a></p>
         </div>
     </form>
 </div>

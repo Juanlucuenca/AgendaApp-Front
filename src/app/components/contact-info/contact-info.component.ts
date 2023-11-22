@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input} from '@angular/core';
-import { Contact } from 'src/app/data/interfaces/contact';
+import { Contact } from 'src/app/data/interfaces/Contact';
 import { Router } from '@angular/router';
 
 @Component({

@@ -1,30 +1,35 @@
 <div class="form__container">
-    <form class="form">
+    <form class="form" (ngSubmit)="register()">
         <div class="form__row">
             <div class="form__col">
                 <span>
-                    <label class="form__label">Nombre</label>
-                    <input class="form__input" type="email" name="email" id="email">
+                    <label class="form__label">Nombre de usuario</label>
+                    <input class="form__input" type="email" name="email" id="email" minlength="4" required="true" [(ngModel)]="registerData.nombreDeUsuario" #user="ngModel">
+                    <p class="error" *ngIf="user.invalid && (user.touched || user.dirty)">Ingrese un nombre de usuario válido</p>
                 </span>
                 <span>
-                    <label class="form__label">Apellido</label>
-                    <input class="form__input" type="email" name="apellido" id="apellido">
+                    <label class="form__label">Nombre</label>
+                    <input class="form__input" type="email" name="apellido" id="apellido" placeholder="nombre" autocomplete="nombre" minlength="3" [(ngModel)]="registerData.nombre" #nombre="ngModel">
+                    <p class="error" *ngIf="nombre.invalid && (nombre.touched || nombre.dirty)">Ingrese un nombre válido</p>
                 </span>
             </div>
         </div>
         <div class="form__row">
-            <label class="form__label">Email</label>
-            <input class="form__input" type="email" name="email" id="email">
+            <label class="form__label">Apellido</label>
+            <input class="form__input" type="email" name="email" id="email" placeholder="apellido" autocomplete="apellido" minlength="3" [(ngModel)]="registerData.apellido" #apellido="ngModel">
+            <p class="error" *ngIf="apellido.invalid && (apellido.touched || apellido.dirty)">Ingrese un apellido válido</p>
         </div>
         <div class="form__row">
             <label class="form__label">Password</label>
-            <input class="form__input" type="password" name="password" id="password">
+            <input class="form__input" type="password" name="password" id="password" placeholder="Contraseña" autocomplete="current-password" minlength="8" [(ngModel)]="registerData.contrasenia" #password="ngModel">
+            <p class="error" *ngIf="password.invalid && (password.touched || password.dirty)">Ingrese una contraseña válida</p>
         </div>
         <div class="form__row">
-            <input class="form__submit" type="submit" value="login">
+            <input class="form__submit" type="submit" value="Register">
+            <p *ngIf="errorRegister()" class="error">Error en el inicio de sesión</p>
         </div>
         <div class="form__row">
-            <p class = "form__text">Already have an account?<a class = "form__link" href="#"> login</a></p>
+            <p class = "form__text">Already have an account?<a [routerLink]="['/login']" class = "form__link" href="#"> login</a></p>
         </div>
     </form>
 </div>

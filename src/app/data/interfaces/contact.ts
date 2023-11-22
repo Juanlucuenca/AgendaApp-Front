@@ -1,9 +1,13 @@
+import { User } from "./User"
 export interface Contact {
-    id: number;
-    imgUrl: string;
-    name: string;
-    surname: string;
-    address: string;
-    phoneNumber: string;
-    company: string;
+    id: number,
+    name: string
+    lastName: string
+    address : string
+    email: string
+    image: string
+    number: string
+    company: string
+    user?: User
+    userId: number
 }

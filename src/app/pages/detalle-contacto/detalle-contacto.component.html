@@ -2,13 +2,13 @@
     <div class="detalleCard">
         <div class="detalleCard__gradiant"></div>
         <div class="detalleCard__row">
-            <img [src]="contact.imgUrl" alt="#" class="detalleCard__img">
+            <img [src]="contact.image" alt="#" class="detalleCard__img">
         </div>
         <div class="detalleCard__row">
             <div>
-                <p class="detalleCard__info"> <span class = "green-text">Nombre:</span> {{contact.name + " " + contact.surname}}</p>
+                <p class="detalleCard__info"> <span class = "green-text">Nombre:</span> {{contact.name + " " + contact.lastName}}</p>
                 <p class="detalleCard__info"><span class = "green-text">Direccion:</span> {{contact.address}}</p>
-                <p class="detalleCard__info"><span class = "green-text">Telefono:</span> {{contact.phoneNumber}}</p>
+                <p class="detalleCard__info"><span class = "green-text">Telefono:</span> {{contact.number}}</p>
                 <p class="detalleCard__info"><span class = "green-text">Empresa:</span> {{contact.company}}</p>
             </div>
         </div>

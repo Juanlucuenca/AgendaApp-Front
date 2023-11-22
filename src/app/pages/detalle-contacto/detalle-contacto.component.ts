@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Contact } from 'src/app/data/interfaces/contact';
+import { catchError } from 'rxjs';
+import { Contact } from 'src/app/data/interfaces/Contact';
 import { ContactsService } from 'src/app/services/contacts.service';
 
 @Component({
@@ -9,22 +10,30 @@ import { ContactsService } from 'src/app/services/contacts.service';
   styleUrls: ['./detalle-contacto.component.scss']
 })
 export class DetalleContactoComponent {
+  router = inject(Router)
+  activatedRoute = inject(ActivatedRoute);
   constructor(
     private contactsService: ContactsService,
-    private activatedRouter: ActivatedRoute,
     ) { }
 
-  public contactId: number = 0;
-  public contact!: Contact;
+    contact:Contact = {
+      id: 0,
+      name: '',
+      lastName: '',
+      address: '',
+      email: '',
+      image: '',
+      number: '',
+      company: '',
+      userId: 0
+    }
 
-  ngOnInit(): void {
-    this.activatedRouter.paramMap.subscribe(params => {
-      const id = params.get('id');
-      if (id) {
-        const usr = this.contactsService.getbyId(Number(id));
-        if(usr) {this.contact = usr;}
-      }
-    });
-  }
+    ngOnInit(): void {
+      this.activatedRoute.params.subscribe(params =>{
+        this.contactsService.getById(params['id']).then(res => {
+          if(res) this.contact = res;
+        })
+      })
+    }
 
 }
