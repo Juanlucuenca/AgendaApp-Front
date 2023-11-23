@@ -12,3 +12,32 @@
     justify-content: flex-start;
     flex-direction: column;
 }
+
+.addContact {
+  width: 65px;
+  height: 65px;
+  padding: .3rem;
+  background-color: getColor("primary");
+    position: absolute;
+    bottom: 4%;
+    right: 4%;
+    border-radius: 10rem;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+
+    &:hover {
+      box-shadow:  8px 8px 30px #bebebe1e,
+      -8px -8px 30px #ffffff1a;
+      border: 2px solid #ffffff17;
+      transform: scale(1.1);
+    }
+}
+
+#dialog {
+  margin: auto;
+  background-color: transparent;
+
+  &::backdrop{
+    background-color: rgba(0, 0, 0, .6);
+  }
+}

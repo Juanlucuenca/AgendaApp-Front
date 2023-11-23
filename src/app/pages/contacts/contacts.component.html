@@ -3,6 +3,9 @@
     <ng-container *ngFor="let contact of contacts">
         <contact-info [contact]="contact"></contact-info>
     </ng-container>
+    <div class="addContact" (click) = "modalEditor.showModal()">
+        <img src="../../../assets/svg.svg" alt="">
+    </div>
 </div>
 
 <dialog id ="dialog" method = "modal" #modalEditor>

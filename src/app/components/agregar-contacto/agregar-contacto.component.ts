@@ -13,8 +13,8 @@ import { Contact } from 'src/app/data/interfaces/Contact';
 })
 export class AgregarContactoComponent {
   @Output() cerrar = new EventEmitter();
-  constructor( 
-    public service : ContactsService 
+  constructor(
+    public service : ContactsService
     ) { }
 
 
@@ -32,6 +32,7 @@ export class AgregarContactoComponent {
 
   public agregarContacto(contacto: Contact) {
     this.cerrar.emit();
+    console.log("ejecutado")
     this.service.create(contacto);
   }
 

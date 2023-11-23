@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Contact } from '../data/interfaces/Contact';
 import {API} from '../constants/api';
 import { ApiService } from './api.service';
@@ -8,13 +8,14 @@ import { ApiService } from './api.service';
 })
 export class ContactsService extends ApiService {
 
+  auth = 
   async create(contacto:Contact):Promise<boolean>{
     if(contacto.id) return false;
     const res = await fetch(API+'Contact/',{
       method:'POST',
       headers:{
         "Content-type":"application/json",
-        Authorization: "Bearer "+this.auth.token
+        Authorization: "Bearer "+ this.auth.token
       },
       body: JSON.stringify(contacto)
     })
