@@ -1,0 +1,74 @@
+@import '../../../scss/abstracts/functions';
+@import '../../../scss/abstracts/vars';
+
+.contact-form {
+    width: 35rem;
+    min-height: 25rem;
+    background-color: getColor("black");
+    padding: 3rem;
+    color: getColor("light");
+    border-radius: 1rem;
+    border: 1px solid getColor('lightdark');
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+
+
+    &__form {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    &__field {
+        margin: .6rem .4rem;
+        // width: 50%;
+    }
+
+    &__title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+
+    &__field {
+        align-self: center;
+        color: getColor('primary');
+        font-weight: 600;
+    }
+
+    &__input {
+        border-radius: 0.5rem;
+        padding: .6rem 0.4rem;
+        width: 100%;
+        border: none;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        background-color: getColor('secondary');
+        outline: 2px solid getColor('lightdark');
+        margin-top: .3em;
+        &:focus {
+            outline: 2px solid getColor('primary');
+        }
+    }
+
+    &__submit {
+        border-radius: .5em;
+        padding: .8rem 1.4rem;
+        background-color: getColor('primary');
+        margin: .8em;
+        cursor: pointer;
+    }
+
+
+    &__skipe {
+        border-radius: .5em;
+        padding: .8rem 1.4rem;
+        background-color: #D80032;
+        margin: .8em;
+        cursor: pointer;
+    }
+}

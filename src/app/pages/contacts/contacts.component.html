@@ -4,3 +4,7 @@
         <contact-info [contact]="contact"></contact-info>
     </ng-container>
 </div>
+
+<dialog id ="dialog" method = "modal" #modalEditor>
+    <agregar-contacto (cerrar)="modalEditor.close()"></agregar-contacto>
+</dialog>
