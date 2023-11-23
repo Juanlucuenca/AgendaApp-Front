@@ -14,3 +14,12 @@
     align-items: center;
     justify-content: center;
 }
+
+#dialog {
+    margin: auto;
+    background-color: transparent;
+  
+    &::backdrop{
+      background-color: rgba(0, 0, 0, .6);
+    }
+  }

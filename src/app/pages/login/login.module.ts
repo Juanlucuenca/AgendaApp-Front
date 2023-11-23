@@ -14,7 +14,11 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     LoginRoutingModule,
+<<<<<<< Updated upstream
     FormsModule,
+=======
+    FormsModule
+>>>>>>> Stashed changes
   ]
 })
 export class LoginModule { }

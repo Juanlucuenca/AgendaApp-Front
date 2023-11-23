@@ -1,6 +1,15 @@
 <div class="contacts__container">
-    <h3 class = "contact__title">Lista de contactos</h3>
-    <ng-container *ngFor="let contact of contacts">
-        <contact-info [contact]="contact"></contact-info>
-    </ng-container>
+        <h3 class = "contact__title">Lista de contactos</h3>
+        <ng-container *ngFor="let contact of contacts">
+            <contact-info [contact]="contact"></contact-info>
+        </ng-container>
+        <div class="addContact" (click) = "modalEditor.showModal()">
+            <img src="../../../assets/add-svgrepo-com-2.svg" alt="">
+        </div> 
 </div>
+
+<dialog id ="dialog" method = "modal" #modalEditor>
+    <agregar-contacto (cerrar)="modalEditor.close()"></agregar-contacto>
+</dialog> 
+
+

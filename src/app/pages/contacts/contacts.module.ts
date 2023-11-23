@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { ContactsRoutingModule } from './contacts-routing.module';
 import { ContactsComponent } from './contacts.component';
 import { ContactInfoComponent } from 'src/app/components/contact-info/contact-info.component';
+import { AgregarContactoComponent } from 'src/app/components/agregar-contacto/agregar-contacto.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { ContactInfoComponent } from 'src/app/components/contact-info/contact-in
   imports: [
     CommonModule,
     ContactsRoutingModule,
-    ContactInfoComponent
+    ContactInfoComponent,
+    AgregarContactoComponent
   ]
 })
 export class ContactsModule { }
