@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, Input} from '@angular/core';
 import { Contact } from 'src/app/data/interfaces/Contact';
 import { Router } from '@angular/router';
+import { ContactsService } from 'src/app/services/contacts.service';
 
 @Component({
   selector: 'contact-info',
@@ -13,10 +14,11 @@ import { Router } from '@angular/router';
 export class ContactInfoComponent {
   @Input() contact!: Contact;
 
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router,
+    ) { }
 
   onNavegated(id: number): void {
     this.router.navigate(['contact', id]);
   }
-
 }

@@ -8,6 +8,7 @@ import { ApiService } from './api.service';
 })
 export class ContactsService extends ApiService {
 
+<<<<<<< Updated upstream
   async create(contacto:Contact):Promise<boolean>{
     if(contacto.id) return false;
     const res = await fetch(API+'Contact/',{
@@ -30,6 +31,24 @@ export class ContactsService extends ApiService {
     })
     return res.ok
   };
+=======
+  getAll() {
+    return this.contacts
+  }
+  
+  getbyId(id:number): Contact | undefined {
+    return this.contacts.find(contact => contact.id === id)
+  }
+  create(contact: Contact) {
+    this.contacts.push(contact)
+  }
+  edit(id: number) {
+    return this.contacts.find(contact => contact.id === id)
+  }
+  delete(id:number) {
+    this.contacts = this.contacts.filter(contact => contact.id !== id)
+  }
+>>>>>>> Stashed changes
 
   async edit(contacto:Contact):Promise<boolean>{
     if(!contacto.id) return false;

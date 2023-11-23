@@ -13,7 +13,13 @@ export class DetalleContactoComponent {
   router = inject(Router)
   activatedRoute = inject(ActivatedRoute);
   constructor(
+    private router: Router,
     private contactsService: ContactsService,
+<<<<<<< Updated upstream
+=======
+    private activatedRouter: ActivatedRoute,
+    private contactService: ContactsService,
+>>>>>>> Stashed changes
     ) { }
 
     contact:Contact = {
@@ -35,5 +41,10 @@ export class DetalleContactoComponent {
         })
       })
     }
+
+  deleteContact(contactId: number) {
+    this.contactService.delete(contactId);
+    this.router.navigate(['contacts']);
+  }
 
 }

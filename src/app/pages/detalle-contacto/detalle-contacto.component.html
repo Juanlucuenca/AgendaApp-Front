@@ -13,7 +13,11 @@
             </div>
         </div>
         <div class="detalleCard__row">
-            <span class="detalleCard__button">Editar</span>
-            <span class="detalleCard__button">Eliminar</span>
+            <span class="detalleCard__button" (click) = "modalEditor.showModal()">Editar</span>
+            <span (click)="deleteContact(contact.id)" class="detalleCard__button">Eliminar</span>
     </div>
 </div>
+
+<dialog id ="dialog" method = "modal" #modalEditor>
+    <agregar-contacto (cerrar)="modalEditor.close()" ></agregar-contacto>
+</dialog> 

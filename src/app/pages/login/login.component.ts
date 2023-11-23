@@ -1,6 +1,10 @@
 import { Component, inject, signal } from '@angular/core';
 import { RouterModule, Router } from '@angular/router';
+<<<<<<< Updated upstream
 import { LoginData } from 'src/app/data/interfaces/User';
+=======
+import { UserLogin } from 'src/app/data/interfaces/UserLogin';
+>>>>>>> Stashed changes
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -9,10 +13,22 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
+<<<<<<< Updated upstream
   authService = inject(AuthService)
   router = inject(Router);
   errorLogin = signal(false);
   cargando = signal(false);
+=======
+  constructor(
+    private router: Router,
+    private authService: AuthService
+    ) { }
+
+  public userModel: UserLogin = {
+    nombreDeUsuario: '',
+    contrasenia: ''
+  }
+>>>>>>> Stashed changes
 
   loginData: LoginData= {
     userName:"",
@@ -37,4 +53,11 @@ export class LoginComponent {
       this.cargando.set(false);
     });
   }
+
+  login(user: UserLogin) {
+    console.log("login 1")
+    this.authService.login(user);
+  }
+
+
 }

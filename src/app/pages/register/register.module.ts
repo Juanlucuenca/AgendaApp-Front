@@ -4,7 +4,10 @@ import { CommonModule } from '@angular/common';
 import { RegisterRoutingModule } from './register-routing.module';
 import { RegisterComponent } from './register.component';
 import { FormsModule } from '@angular/forms';
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 
 
 @NgModule({
@@ -13,8 +16,13 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     CommonModule,
+<<<<<<< Updated upstream
     RegisterRoutingModule,
     FormsModule
+=======
+    FormsModule,
+    RegisterRoutingModule
+>>>>>>> Stashed changes
   ]
 })
 export class RegisterModule { }

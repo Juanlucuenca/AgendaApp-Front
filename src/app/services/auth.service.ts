@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 import { Injectable, Signal, WritableSignal, inject, signal } from '@angular/core';
 import { API } from '../constants/api';
 import { LoginData, RegisterData } from '../data/interfaces/User';
@@ -51,3 +52,49 @@ export class AuthService {
     this.router.navigate(["/"]);
   }
 }
+=======
+import { Injectable, booleanAttribute } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { UserRegister } from '../data/interfaces/UserRegister';
+import { Observable } from 'rxjs';
+import { UserLogin } from '../data/interfaces/UserLogin';
+
+@Injectable({
+  providedIn: 'root',
+})
+export class AuthService {
+  private url = 'https://localhost:65214';
+  userToken: string = 'jwtToken';
+
+  constructor(private http: HttpClient) {}
+
+  public register(user: UserRegister): Observable<boolean> {
+    console.log(user)
+    return this.http.post<boolean>(`${this.url}/register`, user);
+  }
+
+  async login(user: UserLogin): Promise<void> {
+    console.log(user)
+    const res = await fetch(`${this.url}/api/authentication/authenticate`, {
+      method: 'POST',
+      body: JSON.stringify(user),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    this.userToken = await res.text();
+    console.log(this.userToken)
+    this.saveToken(this.userToken);
+}
+
+  saveToken(token: string): void {
+    localStorage.setItem('token', token);
+  }
+
+  logout(): void {
+    localStorage.removeItem('token');
+  }
+
+}
+>>>>>>> Stashed changes

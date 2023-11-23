@@ -1,6 +1,7 @@
 <div class="form__container">
     <form class="form" (ngSubmit)="register()">
         <div class="form__row">
+<<<<<<< Updated upstream
             <div class="form__col">
                 <span>
                     <label class="form__label">Nombre de usuario</label>
@@ -27,6 +28,26 @@
         <div class="form__row">
             <input class="form__submit" type="submit" value="Register">
             <p *ngIf="errorRegister()" class="error">Error en el inicio de sesión</p>
+=======
+            <label class="form__label">Nombre</label>
+            <input [(ngModel)] = "userModel.name" class="form__input" type="email" name="email" id="email">
+        </div>
+        <div class="form__row">
+            <label class="form__label">Apellido</label>
+            <input [(ngModel)] = "userModel.surname" class="form__input" type="email" name="apellido" id="apellido">
+        </div>
+        <div class="form__row">
+            <label class="form__label">username</label>
+            <input [(ngModel)] = "userModel.username" class="form__input" type="email" name="apellido" id="apellido">
+        </div>
+        <div class="form__row">
+            <label class="form__label">Password</label>
+            <input [(ngModel)] = "userModel.password" class="form__input" type="password" name="password" id="password">
+        </div>
+        <div class="form__row">
+            <!-- <input class="form__submit" type="submit" (submit)="register(userModel)" value="register"> -->
+            <button class = "form__submit" (click)="register(this.userModel)"></button>
+>>>>>>> Stashed changes
         </div>
         <div class="form__row">
             <p class = "form__text">Already have an account?<a [routerLink]="['/login']" class = "form__link" href="#"> login</a></p>
